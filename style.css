@@ -1,0 +1,266 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #89CFF0;
+  color: #333;
+  font-family: montserrat, sans-serif;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+h1 {
+  color: #333;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-family: montserrat;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 5px;
+  font-family: montserrat;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button {
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.forecast {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.forecast-item {
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 18%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.forecast-item:hover {
+  transform: scale(1.05);
+}
+
+.weather-icon {
+  font-size: 4.5em;
+}
+
+/* adding header effect below */
+
+
+header, .mountains-container {
+  background-color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  overflow: hidden; /* To prevent animation elements from overflowing the container */
+
+}
+
+
+.mountains-container {
+  transform: scale(0.4); /* Adjust this value as necessary */
+  transform-origin: 0 0;
+}
+
+.mountains-container .mountains {
+  position: relative;
+  margin: 160px auto;
+  width: 400px;
+  z-index: 3;
+}
+
+.mountains-container .li {
+  float: left;
+}
+
+.mountains-container .peak1 {
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 100px solid SteelBlue;
+}
+
+.mountains-container .peak2 {
+	border-left: 75px solid transparent;
+	border-right: 87.5px solid transparent;
+	border-bottom: 75px solid SteelBlue;
+  margin-left: -100px;
+  margin-top: 25px;
+}
+
+.mountains-container .peak3 {
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 100px solid SteelBlue;
+  margin-left: -125px;
+}
+
+.mountains-container .sun {
+  animation: rise 20s ease-in-out 2s infinite Alternate both;
+  -webkit-animation: rise 10s ease-in-out 1s infinite Alternate both; 
+  background: gold;
+  border-radius: 50%;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+
+.mountains-container .clouds-wrapper {
+  margin: -75px auto;
+  width: 400px;
+}
+
+.mountains-container .clouds-wrapper .li {
+  position: absolute;
+  background: Gainsboro;
+}
+
+.mountains-container .clouds-wrapper .li:nth-child(1) {
+  border-radius: 15px;
+  height: 25px;
+  width: 75px;
+} 
+
+.mountains-container .clouds-wrapper .li:nth-child(2) {
+  border-radius: 50%;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: 11.5px;
+  width: 40px;
+}
+
+.mountains-container .clouds-wrapper .li:nth-child(3) {
+  border-radius: 50%;
+  height: 25px;
+  margin-top: -12.5px;
+  margin-left: 40px;
+  width: 25px;
+}
+
+/* Remaining .clouds-container and animation CSS */
+/* ... */
+
+/* Slide over effect */
+
+@keyframes slideOver {
+  0% {
+      transform: translateX(-300px);
+      opacity: 0;
+  }
+
+  20% {
+      opacity: 1;
+  }
+
+  90% {
+      opacity: 1;
+  }
+
+  100% {
+      transform: translateX(800px);
+      opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideOver {
+  0% {
+      opacity: 0;
+      transform: translateX(-300px);
+  }
+
+  20% {
+      opacity: 1;
+  }
+
+  90% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+      transform: translateX(800px);
+  }
+}
+
+/* Sun rise effect */
+@keyframes rise {
+  0% {
+      background: tomato;
+      opacity: 0;
+      transform: translateY(0px);
+  }
+
+  10% {
+      opacity: 1;
+  }
+
+  20% {
+      background: goldenrod;
+  }
+
+  55% {
+      background: golden;
+  }
+
+  100% {
+      transform: translateY(-350px);
+  }
+}
+
+@-webkit-keyframes rise {
+  0% {
+      background: tomato;
+      transform: translateY(0px);
+      opacity: 0;
+  }
+
+  10% {
+      opacity: 1;
+  }
+
+  20% {
+      background: goldenrod;
+  }
+
+  55% {
+      background: golden;
+  }
+
+  100% {
+      transform: translateY(-350px);
+  }
+}
+
+
+
+
+/* do not go below here */
+
+@media (max-width: 975px) {
+  .forecast {
+    flex-direction: column;
+  }
+
+  .forecast-item {
+    width: 90%;
+    margin: 10px 25px;
+    
+  }
+}
