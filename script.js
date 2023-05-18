@@ -27,7 +27,7 @@ async function getForecast() {
   // Display forecast
   const forecastDiv = document.getElementById('forecast');
   forecastDiv.innerHTML = '';
-  for (let i = 0; i < forecastData.list.length; i += 8) { // 8 data points per day
+  for (let i = 0; i < forecastData.list.length; i += 8) { // 8 updates per day
     const forecast = forecastData.list[i];
 
     const date = new Date(forecast.dt_txt).toLocaleDateString();
