@@ -90,7 +90,7 @@ header, .mountains-container {
 .mountains-container .mountains {
   position: relative;
   margin: 160px auto;
-  width: 400px;
+  width: 335px;
   z-index: 3;
 }
 
@@ -167,11 +167,25 @@ header, .mountains-container {
 /* Remaining .clouds-container and animation CSS */
 /* ... */
 
+.clouds1 {
+  animation: slideOver 10s infinite alternate-reverse both;
+
+}
+.clouds2 {
+  animation: slideOver 10s infinite alternate-reverse both;
+
+}
+.clouds3 {
+  animation: slideOver 10s infinite alternate-reverse both;
+
+}
+
+
 /* Slide over effect */
 
 @keyframes slideOver {
   0% {
-      transform: translateX(-300px);
+      transform: translateX(-100px);
       opacity: 0;
   }
 
@@ -192,7 +206,7 @@ header, .mountains-container {
 @-webkit-keyframes slideOver {
   0% {
       opacity: 0;
-      transform: translateX(-300px);
+      transform: translateX(-100px);
   }
 
   20% {
