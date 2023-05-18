@@ -273,6 +273,17 @@ header, .mountains-container {
 }
 
 
+/* Footer */
+#footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: #333; /*change this to the color you want for your footer*/
+  color: #fff; /*change this to the color you want for your text*/
+  padding: 5px 0;
+}
+
 
 
 /* do not go below here */
