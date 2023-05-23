@@ -11,8 +11,21 @@ document.getElementById('searchButton').addEventListener('click', function(event
   getForecast();
 });
 
+// Restore the city from localStorage when the page is reloaded
+document.addEventListener('DOMContentLoaded', function() {
+  const city = localStorage.getItem('city');
+  if (city !== null) {
+    document.getElementById('city').value = city;
+    getForecast();
+  }
+});
+
 async function getForecast() {
   const city = document.getElementById('city').value;
+
+  // Store the city in localStorage
+  localStorage.setItem('city', city);
+
   const apiKey = '9b7067287fd472ca5894070e27769a84';
 
   // Get city coordinates
@@ -45,8 +58,7 @@ async function getForecast() {
             <p>Wind speed: ${windSpeed} m/s</p>
         </div>
     `;
-}
-
+  }
 }
 
 function getWeatherIcon(condition) {
