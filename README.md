@@ -1,3 +1,5 @@
+<img width="734" alt="Screenshot 2023-05-23 at 3 07 18 PM" src="https://github.com/elavallee13/WeatherWizard/assets/126723001/504b129e-e331-4404-9cac-725352794fce">
+
 🌤️ WeatherWizard ⚡️
 
 WeatherWizard is a browser-based weather dashboard that allows users to search for a 5-day weather forecast for any city. 
