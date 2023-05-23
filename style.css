@@ -1,6 +1,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  min-height: 110vh;
   background-color: #89CFF0;
   color: #333;
   font-family: montserrat, sans-serif;
@@ -78,7 +79,7 @@ header, .mountains-container {
   padding: 10px 0;
   text-align: center;
   overflow: hidden; 
-  /* Added to prevent animation elements from overflowing the container */
+  /* added to prevent animation elements from overflowing the container */
 
 }
 
@@ -275,15 +276,21 @@ header, .mountains-container {
 
 /* Footer */
 #footer {
-  position:absolute ;
-  bottom: -10;
+  position:fixed ;
+  margin-top: auto;
+  bottom: 0;
   width: 100%;
   text-align: center;
   background: #333; 
   color: #fff; 
   padding: 5px 0;
+  text-decoration: none;
 }
 
+#linkToG {
+  text-decoration: none;
+color: #9a9999;
+}
 
 
 /* do not go below here */
@@ -291,6 +298,7 @@ header, .mountains-container {
 @media (max-width: 975px) {
   .forecast {
     flex-direction: column;
+    
   }
 
   .forecast-item {

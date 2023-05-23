@@ -27,6 +27,7 @@ To run this project, you don't need any special tools - just a modern web browse
 
 Credits 🙌🏼
 * Animation for the header was inspired by Rachel Cope's work on CodePen, which can be found here. (https://codepen.io/rachelcope/pen/YPzZrg)
+* Favicon was sourced from (https://favicon.io/emoji-favicons/cloud-with-lightning)
 * Extensive usage of the Mozilla Developer Network (MDN) for JavaScript references.
 * Various YouTube tutorials, particularly AskBCS for JavaScript debugging techniques.
 * Huge thanks to my fellow developers for their insights and feedback during the development process.
