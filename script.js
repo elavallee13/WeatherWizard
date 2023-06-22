@@ -1,14 +1,8 @@
 document.getElementById('city').addEventListener('keypress', function(event) {
   if (event.keyCode === 13) {
-      event.preventDefault();
-      getForecast();
+    event.preventDefault();
+    getForecast();
   }
-});
-
-
-document.getElementById('searchButton').addEventListener('click', function(event) {
-  event.preventDefault();
-  getForecast();
 });
 
 // Restore the city from localStorage when the page is reloaded
@@ -37,6 +31,10 @@ async function getForecast() {
   const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`);
   const forecastData = await forecastResponse.json();
 
+  // Get current weather
+  const currentResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`);
+  const currentData = await currentResponse.json();
+
   // Display forecast
   const forecastDiv = document.getElementById('forecast');
   forecastDiv.innerHTML = '';
@@ -59,18 +57,60 @@ async function getForecast() {
         </div>
     `;
   }
+
+  // Display current weather
+  const currentWeatherDiv = document.getElementById('currentWeather');
+  const currentTemperature = Math.round(currentData.main.temp);
+  const currentHumidity = currentData.main.humidity;
+  const currentWindSpeed = currentData.wind.speed;
+  const currentWeatherIcon = getWeatherIcon(currentData.weather[0].main);
+
+  if (city.trim() !== '') {
+    currentWeatherDiv.innerHTML = `
+      <h2>Current Weather in ${city}</h2>
+      <div class="weather-icon">${currentWeatherIcon}</div>
+      <p>Temperature: ${currentTemperature}°F</p>
+      <p>Humidity: ${currentHumidity}%</p>
+      <p>Wind speed: ${currentWindSpeed} m/s</p>
+    `;
+  } else {
+    currentWeatherDiv.innerHTML = '';
+  }
+
+  // Update search history
+  const historyList = document.getElementById('historyList');
+  historyList.innerHTML = 'Search history:';
+  if (city.trim() !== '') {
+    const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    if (!searchHistory.includes(city)) {
+      searchHistory.push(city);
+    }
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+
+    searchHistory.forEach((item) => {
+      const historyItem = document.createElement('button');
+      historyItem.classList.add('history-button');
+      historyItem.textContent = item;
+      historyItem.addEventListener('click', function() {
+        document.getElementById('city').value = item;
+        getForecast();
+      });
+
+      historyList.appendChild(historyItem);
+    });
+  }
 }
 
 function getWeatherIcon(condition) {
   const weatherConditions = {
-      Clear: '☀️',
-      Clouds: '☁️',
-      Rain: '🌧️',
-      Snow: '❄️',
-      Mist: '🌫️',
-      Drizzle: '🌦️',
-      Thunderstorm: '⛈️',
+    Clear: '☀️',
+    Clouds: '☁️',
+    Rain: '🌧️',
+    Snow: '❄️',
+    Mist: '🌫️',
+    Drizzle: '🌦️',
+    Thunderstorm: '⛈️',
   };
 
-  return weatherConditions[condition] || '❓';
+  return weatherConditions[condition] || '';
 }

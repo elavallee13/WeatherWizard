@@ -51,6 +51,7 @@ button {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-bottom: 200px;
 }
 
 .forecast-item {
@@ -276,8 +277,8 @@ header, .mountains-container {
 
 /* Footer */
 #footer {
-  position:fixed ;
-  margin-top: auto;
+  position:fixed;
+  margin-top: 50px;
   bottom: 0;
   width: 100%;
   text-align: center;
