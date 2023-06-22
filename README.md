@@ -41,3 +41,6 @@ This project has been a tremendous learning opportunity. Key learning areas incl
 * Animation: Implemented animation for the header by leveraging third-party code and modifying it according to the needs of the project.
 * Collaboration: Working with and learning from other developers significantly contributed to the success of the project.
 * Debugging: Learned to efficiently debug JavaScript using resources like AskBCS and MDN.
+
+Link to the deployed app - https://elavallee13.github.io/WeatherWizard/
+Developer Github - https://github.com/elavallee13
