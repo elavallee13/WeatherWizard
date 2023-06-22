@@ -1,3 +1,5 @@
+<img width="734" alt="Screenshot 2023-05-23 at 3 07 18 PM" src="https://github.com/elavallee13/WeatherWizard/assets/126723001/504b129e-e331-4404-9cac-725352794fce">
+
 🌤️ WeatherWizard ⚡️
 
 WeatherWizard is a browser-based weather dashboard that allows users to search for a 5-day weather forecast for any city. 
@@ -39,5 +41,3 @@ This project has been a tremendous learning opportunity. Key learning areas incl
 * Animation: Implemented animation for the header by leveraging third-party code and modifying it according to the needs of the project.
 * Collaboration: Working with and learning from other developers significantly contributed to the success of the project.
 * Debugging: Learned to efficiently debug JavaScript using resources like AskBCS and MDN.
- License 
-This project is licensed under the MIT License.
